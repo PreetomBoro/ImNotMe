@@ -1,8 +1,7 @@
-#include "imgui.h"
-#include "imgui_impl_glfw.h"
-#include "imgui_impl_opengl3.h"
-#include <stdio.h>
-#include <GLFW/glfw3.h>
+#include "boringheaders.h"
+#include "xplorer.h"
+
+
 
 //didn't want to write the prerequired stuff inside the main function
 GLFWwindow* initglfw(const char* title)
@@ -29,18 +28,24 @@ void initimgui(GLFWwindow* window)
     ImGui::StyleColorsLight();                                // Style (classic is also good)
 
     ImGui_ImplGlfw_InitForOpenGL(window, true);
+    ImGui::DockSpaceOverViewport(ImGui::GetMainViewport());
     return;
 }
 
+
 int main()
 {
+    //initialise karlo guyzzz
     GLFWwindow* window = initglfw("Main Window");
     initimgui(window);
 
+    //xplorer.cpp
+    XPLORER::showxplorer();
 
 
 	return 0;
 }
+
 
 
 
