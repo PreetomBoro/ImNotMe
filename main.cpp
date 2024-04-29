@@ -1,5 +1,5 @@
-#include "boringheaders.h"
-#include "xplorer.h"
+#include "boringheaders.h" //codeblocks gets drunk when using this. just stick to the basic for a while till figuring out what's causing the error
+#include "xplorer.h" 
 
 
 
