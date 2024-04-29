@@ -16,7 +16,7 @@ GLFWwindow* initglfw(const char* title)
 }
 
 
-//bad idea. very bad idea, several errors. don't forget to put it inside int main.
+//bad idea. very bad idea, several errors. don't forget to put it inside int main towmorrow.
 void initimgui(GLFWwindow* window)
 {
     //DearImGUI init
