@@ -11,7 +11,11 @@ the sub-window          : for primary auditioning of objects and drag and dropin
  Or, make a tree node in another window and somehow append it to the shortcut window)
 
 */
-void showxplorer()
+namespace XPLORER
 {
-    return;
+   void showxplorer()
+   {
+       return;
+   }
+
 }
