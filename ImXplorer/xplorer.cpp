@@ -29,28 +29,47 @@ namespace XPLORER
     {
         if (ImGui::Begin("Xplorer"))
         {
-            ImGui::Text("This is a text");
             ImGui::Button("smash");
-            if (ImGui::BeginChild("the sub window",ImVec2(-FLT_MIN, ImGui::GetTextLineHeightWithSpacing() * 8), ImGuiChildFlags_Border | ImGuiChildFlags_ResizeY))
-            {for(int n=0; n<10; n++)
-            {
-                ImGui::Text("something %0d",n);
-            }
-            }
-            ImGui::EndChild();
 
-            /*
-            HelpMarker("Drag bottom border to resize. Double-click bottom border to auto-fit to vertical contents.");
-            ImGui::PushStyleColor(ImGuiCol_ChildBg, ImGui::GetStyleColorVec4(ImGuiCol_FrameBg));
-            if (ImGui::BeginChild("ResizableChild", ImVec2(-FLT_MIN, ImGui::GetTextLineHeightWithSpacing() * 8), ImGuiChildFlags_Border | ImGuiChildFlags_ResizeY))
-                for (int n = 0; n < 10; n++)
-                    ImGui::Text("Line %04d", n);
-            ImGui::PopStyleColor();
-            ImGui::EndChild();
-            */
+            //this is for the shortcut list
+            //maybe the prebuilt "list/or selectable" widgets will be a good enough choice for it
+            //needs to be border-less tho
+            //ShortCut Window
+            {
+                ImGui::BeginChild("XplorerShortcutsWindow", ImVec2(ImGui::GetContentRegionAvail().x * 0.3f, 260), ImGuiChildFlags_None);
+                {
+                    static short int selected =0;
+                    ImGui::Selectable("Samples", selected==0)? selected =0: selected = selected;
+                    ImGui::Selectable("Favorites", selected==1)? selected =1: selected = selected;
+                    ImGui::Selectable("Preset", selected==2)? selected =2: selected = selected;
+                }
+                ImGui::EndChild();
+            }
+
+
+
+            ImGui::SameLine();
+            ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 7.0f);
+            //this is for the sub window
+            {
+                if (ImGui::BeginChild("XplorerSubWindow",ImVec2(-FLT_MIN, ImGui::GetTextLineHeightWithSpacing() * 8), ImGuiChildFlags_Border | ImGuiChildFlags_ResizeY))
+                {
+                    for(int n=0; n<10; n++)
+                    {
+                        ImGui::Text("something %0d",n);// replace the text with tree or something to show directories
+                    }
+                }
+                ImGui::EndChild();
+            }
+            ImGui::PopStyleVar();
         ImGui::End();
         }
 
         return;
     }
+
+    struct Shortcut_data
+    {
+    };
+
 }
