@@ -37,6 +37,7 @@ namespace XPLORER
         {
             if(ImGui::Button("smash"))
             {
+
                 imfilebrowser(); //it's just copy paste. look into it more
             }
 
