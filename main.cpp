@@ -121,6 +121,9 @@ int main(int, char**)
     while (!glfwWindowShouldClose(window))
 #endif
     {
+        //remember to set a goof fonts that's scales well cuz the default small font hurts the eyes when working
+
+
         //still not fully sure what this does
         glfwPollEvents();
 
