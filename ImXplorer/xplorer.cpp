@@ -1,9 +1,8 @@
 #include "xplorer.h"
 #include "imgui.h"
-#include "filedialog.h"
 #include <string>
 #include <vector>
-
+#include "filedialog.h"
 /*
 xplorer window should have two main window
 
@@ -15,30 +14,21 @@ the sub-window          : for primary auditioning of objects and drag and dropin
  Or, make a tree node in another window and somehow append it to the shortcut window)
 
 */
-static void HelpMarker(const char* desc)
-{
-    ImGui::TextDisabled("(?)");
-    if (ImGui::BeginItemTooltip())
-    {
-        ImGui::PushTextWrapPos(ImGui::GetFontSize() * 35.0f);
-        ImGui::TextUnformatted(desc);
-        ImGui::PopTextWrapPos();
-        ImGui::EndTooltip();
-    }
-}
 
 namespace XPLORER
 {
     static short int selected =0;
-
+    char path = NULL;
     void ShowXplorer()
     {
         if (ImGui::Begin("Xplorer"))
         {
             if(ImGui::Button("smash"))
             {
-
-                imfilebrowser(); //it's just copy paste. look into it more
+                 path = FDIALOG::filedialog(); //<-- god damn linker errors when using nfd.h
+                 //idk what's causing it. built the "gmake-windows" config=debug/release_x64
+                 //it's crazy how much linker error still occurs. god damn bruh I just want to make a window appear.
+                 //thank you to anybody that makes header only library. real heroes.
             }
 
             //this is for the shortcut list

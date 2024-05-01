@@ -1,10 +1,15 @@
+#include <nfd.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "filedialog.h"
-#include "imgui.h"
 
-#include <iostream>
-
-namespace FDIALOG
+nfdchar_t filedialog()
 {
-
+    nfdchar_t *outpath = NULL;
+    nfdresult_t result = NFD_PickFolder(NULL, &outpath);
+    if(result == NFD_OKAY)
+        return *outpath;
+    return NULL;
 }
+
 

@@ -5,18 +5,7 @@
 
 //
 //update: doesn't reallly works
-//try "nativefiledialog" project insteads
-
-#pragma once
-#include <ctime>
-#include <stack>
-#include <string>
-#include <thread>
-#include <vector>
-#include <functional>
-#include <filesystem>
-#include <unordered_map>
-#include <algorithm>
+#include <nfd.h>
 
 
 namespace FDIALOG
@@ -28,6 +17,8 @@ namespace FDIALOG
     public:
 
     };
+    nfdchar_t filedialog();
+
 }
 
 void imfilebrowser();
