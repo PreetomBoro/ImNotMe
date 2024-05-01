@@ -1,5 +1,9 @@
 #include "xplorer.h"
 #include "imgui.h"
+#include "filedialog.h"
+#include <string>
+#include <vector>
+
 /*
 xplorer window should have two main window
 
@@ -25,11 +29,16 @@ static void HelpMarker(const char* desc)
 
 namespace XPLORER
 {
+    static short int selected =0;
+
     void ShowXplorer()
     {
         if (ImGui::Begin("Xplorer"))
         {
-            ImGui::Button("smash");
+            if(ImGui::Button("smash"))
+            {
+                imfilebrowser(); //it's just copy paste. look into it more
+            }
 
             //this is for the shortcut list
             //maybe the prebuilt "list/or selectable" widgets will be a good enough choice for it
@@ -38,7 +47,7 @@ namespace XPLORER
             {
                 ImGui::BeginChild("XplorerShortcutsWindow", ImVec2(ImGui::GetContentRegionAvail().x * 0.3f, 260), ImGuiChildFlags_None);
                 {
-                    static short int selected =0;
+
                     ImGui::Selectable("Samples", selected==0)? selected =0: selected = selected;
                     ImGui::Selectable("Favorites", selected==1)? selected =1: selected = selected;
                     ImGui::Selectable("Preset", selected==2)? selected =2: selected = selected;
@@ -68,8 +77,24 @@ namespace XPLORER
         return;
     }
 
-    struct Shortcut_data
+    void add_path_from(unsigned short int selected)
     {
+
+    }
+
+    void remove_path_from(unsigned short int selected)
+    {
+
+    }
+
+    struct Shortcut_data_for
+    {
+        int sno {}; //1 for samples... 2 for favourite.. 0 for nothing selected
+        std::vector<std::string> paths {};
     };
+
+    Shortcut_data_for Samples;
+    Shortcut_data_for Favourite;
+
 
 }
