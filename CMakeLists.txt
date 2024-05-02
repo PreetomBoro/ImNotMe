@@ -22,5 +22,5 @@ Hope every guy that created header only library with simple dependencies get bea
 
 
 TL;DR:
-I am not using CMAKE. what's the built system then? =>nothing. nothing is the build system. I'll just list the files needed in free time. 
+I am not using CMAKE. what's the built generator then? =>nothing. nothing is the build generator. I'll just list the files needed in free time. 
 Cross platform can suck my balls. I'll have different repos for different OS.
