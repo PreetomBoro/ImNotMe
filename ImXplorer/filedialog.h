@@ -5,20 +5,10 @@
 
 //
 //update: doesn't reallly works
-#include <nfd.h>
-
-
-namespace FDIALOG
-{
+#include <nfd.hpp>
 
 
 
-    class filedialog{
-    public:
 
-    };
-    nfdchar_t filedialog();
+nfdchar_t filedialog();
 
-}
-
-void imfilebrowser();

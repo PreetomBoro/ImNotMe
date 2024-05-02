@@ -25,7 +25,7 @@ namespace XPLORER
         {
             if(ImGui::Button("smash"))
             {
-                 path = FDIALOG::filedialog(); //<-- god damn linker errors when using nfd.h
+                 //<-- god damn linker errors when using nfd.h
                  //idk what's causing it. built the "gmake-windows" config=debug/release_x64
                  //it's crazy how much linker error still occurs. god damn bruh I just want to make a window appear.
                  //thank you to anybody that makes header only library. real heroes.
