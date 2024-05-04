@@ -5,10 +5,15 @@
 
 //
 //update: doesn't reallly works
-#include <nfd.hpp>
 
 
+#define FILE_DIALOG
+#include <string>
+#include <vector>
+class shortcut
+{
+private:
+    std::vector<std::string> path {};
+public:
 
-
-nfdchar_t filedialog();
-
+};

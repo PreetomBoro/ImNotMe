@@ -42,6 +42,7 @@ namespace XPLORER
                     ImGui::Selectable("Samples", selected==0)? selected =0: selected = selected;
                     ImGui::Selectable("Favorites", selected==1)? selected =1: selected = selected;
                     ImGui::Selectable("Preset", selected==2)? selected =2: selected = selected;
+                    ImGui::Selectable("Root", selected==3)? selected =3: selected = selected;
                 }
                 ImGui::EndChild();
             }
@@ -78,14 +79,14 @@ namespace XPLORER
 
     }
 
-    struct Shortcut_data_for
-    {
-        int sno {}; //1 for samples... 2 for favourite.. 0 for nothing selected
-        std::vector<std::string> paths {};
-    };
-
-    Shortcut_data_for Samples;
-    Shortcut_data_for Favourite;
-
-
 }
+
+// there's some porblem with user defined data types
+
+struct sturec {
+    int rollno;
+};
+
+sturec newstu;
+newstu.rollno =10;
+
