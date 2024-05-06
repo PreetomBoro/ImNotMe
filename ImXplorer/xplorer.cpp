@@ -88,5 +88,5 @@ struct sturec {
 };
 
 sturec newstu;
-newstu.rollno =10;
+//newstu.rollno =10;
 

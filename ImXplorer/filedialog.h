@@ -10,10 +10,21 @@
 #define FILE_DIALOG
 #include <string>
 #include <vector>
-class shortcut
-{
-private:
-    std::vector<std::string> path {};
-public:
+#include <string>
+//User cannot add new "shortcuts" for this implementation.
+// what? why? how will they add their frequenty visited directory?
+//Just add path to the
 
-};
+namespace Xplorer{
+
+typedef std::string path;
+typedef std::vector<path> shortcut;
+
+
+
+
+
+}
+
+
+
