@@ -21,8 +21,8 @@ namespace XPLORER
     char path = NULL;
     void ShowXplorer()
     {
-        if(ununified){
-            ShowXplorerUnunified();
+        if(unified){
+            ShowXplorerUnified();
             return;
         }
         if (ImGui::Begin("Xplorer"))
@@ -70,6 +70,11 @@ namespace XPLORER
         ImGui::End();
         }
 
+        return;
+    }
+
+    void ShowXplorerUnified()
+    {
         return;
     }
 
