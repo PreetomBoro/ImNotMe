@@ -21,6 +21,10 @@ namespace XPLORER
     char path = NULL;
     void ShowXplorer()
     {
+        if(ununified){
+            ShowXplorerUnunified();
+            return;
+        }
         if (ImGui::Begin("Xplorer"))
         {
             if(ImGui::Button("smash"))
